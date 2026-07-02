@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>FoodStore-Client</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>!Fs</h1>
+
+        <nav class="navegacion">
+            <ul>
+                <li><a href="/src/pages/store/home/home.html" rel="noopener noreferrer">Inicio</a></li>
+                <li><a href="/src/pages/client/orders/pedidos.html">Mis Pedidos</a></li>
+
+                <li>
+                    <a href="/src/pages/store/cart/cart.html" rel="noopener noreferrer">
+                        Carrito
+                        <span id="cart-badge">0</span>
+                    </a>
+                </li>
+
+                <li><a href="#">Panel Admin</a></li>
+                <li><button id="logoutButton">Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="detalle-producto">
+
+    </div>
+    <script type="module" src="detalle.ts"></script>
+</body>
+</html>

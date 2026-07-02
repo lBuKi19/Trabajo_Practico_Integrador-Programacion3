@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>FoodStore-Admin-Pedidos</title>
+</head>
+
+<body>
+    <header class="header">
+            <h1>!Fs</h1>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="#" rel="noopener noreferrer">Tienda</a></li>
+                    <li><a href="/src/pages/admin/adminHome/adminHome.html"  rel="noopener noreferrer">Panel Admin</a></li>
+                    <li><span id="admin-name">Admin</span></li>
+                    <li><button id="logoutButton">Cerrar sesión</button></li>
+                </ul>
+            </nav>      
+    </header>
+    <div class="contenedor_principal">
+        <aside class="categorias">
+        <h3>Administración</h3>
+        <p class="panel-admin">Panel de control</p>
+        
+        <nav class="admin-menu">
+            <ul id="lista-categorias">
+                <li class="active">
+                    <a href="/src/pages/admin/adminHome/adminHome.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/categories/categories.html">Categorías</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/products/products.html">Productos</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/orders/orders.html">Pedidos</a>
+                </li>
+            </ul>
+        </nav>
+
+        </aside>
+        <main class="crud-main">
+            <div class="admin-page-header">
+                <h2 id="crud-h2">Gestión de Pedidos</h2>
+            
+            <select id="filter-order-status" class="admin-filter-select">
+                <option value="TODOS">Todos los estados</option>
+                <option value="PENDIENTE">Pendiente</option>
+                <option value="CONFIRMADO">Confirmado</option>
+                <option value="TERMINADO">Terminado</option>
+                <option value="CANCELADO">Cancelado</option>
+            </select>
+
+            </div>
+            
+            <section class="admin-orders-section">
+                <p id="admin-orders-empty" style="display: none;">
+                No hay pedidos para mostrar.
+                </p>
+                <div id="admin-orders-container" class="admin-orders-grid">
+                <p>Cargando pedidos...</p>
+                </div>
+            </section>
+            </main>
+
+            <div id="admin-order-modal" class="admin-modal" style="display: none;">
+            <div class="admin-modal-content admin-order-modal-content">
+            <div class="admin-modal-header">
+            <h2 id="admin-order-modal-title">Detalle del Pedido</h2>
+            <button id="btn-close-order-modal" type="button" class="btn-modal-close">
+                ×
+            </button>
+            </div>
+
+            <div id="admin-order-modal-body"></div>
+        </div>
+        </div>
+
+    </div>
+    <footer>
+        <p class="p_footer">Food Store. Todos los derechos reservados</p>
+        <p class="p_footer">Información de contacto: <a href="#">info@foodstore.com</a></p>
+
+    </footer> 
+    <script type="module" src="orders.ts"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>FoodStore-Client</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>!Fs</h1>
+
+        <nav class="navegacion">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="/src/pages/client/orders/pedidos.html">Mis Pedidos</a></li>
+
+                <li>
+                    <a href="/src/pages/store/cart/cart.html" rel="noopener noreferrer">
+                        Carrito
+                        <span id="cart-badge">0</span>
+                    </a>
+                </li>
+
+                <li><a href="#">Panel Admin</a></li>
+                <li><button id="logoutButton">Cerrar sesión</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contenedor_principal">
+        <aside class="categorias">
+            <h3>Categorías</h3>
+            <ul id="lista-categorias"></ul>
+        </aside>
+
+        <main class="contenedor_secundario">
+            <div class="barra-controles">
+                <form class="busqueda_productos">
+                    <label for="buscador"></label>
+                    <input
+                        type="text"
+                        name="producto"
+                        id="buscador"
+                        placeholder="Buscar Productos"
+                    >
+                    <select id="orden-productos">
+                        <option value="default">Todos</option>
+                        <option value="nombre-asc">Nombre A-Z</option>
+                        <option value="nombre-desc">Nombre Z-A</option>
+                        <option value="precio-asc">Precio ascendente</option>
+                        <option value="precio-desc">Precio descendente</option>
+                    </select>
+                    <button class="buscar_boton" type="submit">BUSCAR</button>
+                    
+                </form>
+
+                
+            </div>
+
+            <h2 id="prod_destacados">Listado de Productos</h2>
+
+            <p id="mensaje-no-resultados" style="display: none;">
+                No se encontraron productos
+            </p>
+
+            <section id="contenedor-productos"></section>
+        </main>
+    </div>
+
+    <footer>
+        <p class="p_footer">Food Store. Todos los derechos reservados</p>
+        <p class="p_footer">
+            Información de contacto:
+            <a href="#">info@foodstore.com</a>
+        </p>
+    </footer>
+
+    <script type="module" src="home.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/style.css">
+  <title>Mis Pedidos</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>!Fs</h1>
+
+    <nav class="navegacion">
+      <ul>
+        <li><a href="/src/pages/store/home/home.html">Inicio</a></li>
+        <li><a href="#">Mis Pedidos</a></li>
+        <li>
+          <a href="/src/pages/store/cart/cart.html">
+            Carrito
+            <span id="cart-badge">0</span>
+          </a>
+        </li>
+        <li><button id="logoutButton">Cerrar sesión</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor_principal_pedidos">
+    <div class="pedidos-toolbar">
+      <h2>Mis Pedidos</h2>
+
+      <select id="filtro-estado-pedidos">
+        <option value="TODOS">Todos</option>
+        <option value="PENDIENTE">Pendiente</option>
+        <option value="CONFIRMADO">Confirmado</option>
+        <option value="TERMINADO">Terminado</option>
+        <option value="CANCELADO">Cancelado</option>
+      </select>
+    </div>
+    <section class="pedidos-section">
+      
+      
+
+      <p id="mensaje-sin-pedidos" style="display: none;">
+        Todavía no realizaste pedidos.
+      </p>
+
+      <div id="contenedor-pedidos"></div>
+    </section>
+  </main>
+
+  <div id="pedido-modal" class="pedido-modal" style="display: none;">
+    <div id="pedido-modal-content" class="pedido-modal-content"></div>
+  </div>
+
+  <script type="module" src="pedidos.ts"></script>
+</body>
+
+</html>

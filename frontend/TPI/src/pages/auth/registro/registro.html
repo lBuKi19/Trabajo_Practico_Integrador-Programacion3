@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>Food Store - Registro</title>
+</head>
+
+<body>
+    <main class="container">
+        <form id="form_registro">
+            <h1>Food Store</h1>
+            <h2>Registro</h2>
+            <div>
+                <label class="label_form" for="nombre">Nombre</label>
+                <input type="nombre" class="input_form" id="nombre_registro" name="nombre" autocomplete="off" placeholder="nombre" required>
+            </div>
+            <div>
+                <label class="label_form" for="email">Email</label>
+                <input type="email" class="input_form" id="email_registro" name="email" autocomplete="off" placeholder="example@example.com" required>
+            </div>
+            <div>
+                <label class="label_form" for="password">Contraseña</label>
+                <input type="password" class="input_form" id="password_registro" name="password" autocomplete="off" placeholder="********" required>
+            </div>
+            <button type="submit" id="btn_form" class="btn_form">Registrarse</button>
+            <p class="link_loggeo">¿Ya tenés cuenta? <a href="/src/pages/auth/login/login.html" class="link"> Ingresa aquí</a></p>
+        </form>
+    </main>
+    <script type="module" src="./registro.ts"></script>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>FoodStore-Admin-Productos</title>
+</head>
+
+<body>
+    <header class="header">
+            <h1>!Fs</h1>
+            <nav class="navegacion">
+                <ul>
+                    <li><a href="#" rel="noopener noreferrer">Tienda</a></li>
+                    <li><a href="/src/pages/admin/adminHome/adminHome.html"  rel="noopener noreferrer">Panel Admin</a></li>
+                    <li><span id="admin-name">Admin</span></li>
+                    <li><button id="logoutButton">Cerrar sesión</button></li>
+                </ul>
+            </nav>      
+    </header>
+    <div class="contenedor_principal">
+        <aside class="categorias">
+        <h3>Administración</h3>
+        <p class="panel-admin">Panel de control</p>
+        
+        <nav class="admin-menu">
+            <ul id="lista-categorias">
+                <li class="active">
+                    <a href="/src/pages/admin/adminHome/adminHome.html">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/categories/categories.html">Categorías</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/products/products.html">Productos</a>
+                </li>
+                <li>
+                    <a href="/src/pages/admin/orders/orders.html">Pedidos</a>
+                </li>
+            </ul>
+        </nav>
+
+        </aside>
+        <main class="crud-main">
+            <div class="admin-page-header">
+                <h2 id="crud-h2">Gestión de Productos</h2>
+                <button id="btn-open-create-product" class="btn-create-category" type="button">
+                + Nuevo Producto
+                </button>
+
+            </div>
+            <section class="admin-table-card">
+                <table class="admin-table products-table">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th>Stock</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                    </tr>
+                </thead>
+
+
+                <tbody id="products-table-body">
+                <tr>
+                <td colspan="9">Cargando productos...</td>
+                </tr>
+                </tbody>
+                </table>
+            </section>      
+        </main>
+    </div>
+        <div id="product-modal" class="admin-modal" style="display: none;">
+        <div class="admin-modal-content product-modal-content">
+            <div class="admin-modal-header">
+            <h2 id="product-modal-title">Nuevo Producto</h2>
+            <button id="btn-close-product-modal" type="button" class="btn-modal-close">
+                ×
+            </button>
+            </div>
+
+            <form id="product-form">
+            <input type="hidden" id="product-id" />
+
+            <div class="form-group">
+                <label for="product-name">Nombre</label>
+                <input type="text" id="product-name" required />
+            </div>
+
+        <div class="form-group">
+            <label for="product-description">Descripción</label>
+            <textarea id="product-description" required></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="product-image">URL de Imagen</label>
+            <input
+            type="text"
+            id="product-image"
+            placeholder="https://ejemplo.com/producto.jpg"
+            required
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="product-price">Precio</label>
+            <input type="number" id="product-price" min="1" required />
+        </div>
+
+        <div class="form-group">
+            <label for="product-stock">Stock</label>
+            <input type="number" id="product-stock" min="0" required />
+        </div>
+
+        <div class="form-group">
+            <label for="product-category">Categoría</label>
+            <select id="product-category" required>
+            <option value="">Seleccionar categoría</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+                <label for="product-available">Estado</label>
+                <select id="product-available" required>
+                <option value="true">Disponible</option>
+                <option value="false">No disponible</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-save-category">
+                Guardar
+            </button>
+            </form>
+        </div>
+        </div>
+
+    <footer>
+        <p class="p_footer">Food Store. Todos los derechos reservados</p>
+        <p class="p_footer">Información de contacto: <a href="#">info@foodstore.com</a></p>
+
+    </footer> 
+    <script type="module" src="products.ts"></script>
+</body>
+</html>
